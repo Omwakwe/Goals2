@@ -1,7 +1,7 @@
-<div class="container-fluid">
+<div class="container-fluid border">
     <h2 class="text-center">Create a new Goal</h2>
     <hr>
-    <form (ngSubmit)='submitGoal()' #goalForm='ngForm'>
+    <form (ngSubmit)='submitGoal();goalForm.reset()' #goalForm='ngForm'>
         <div class="form-group">
 
             <label for="name">Name</label>
@@ -29,6 +29,6 @@
                 <p>Date is required</p>
             </div>
         </div>
-        <button type="submit" class="btn btn-success">Add Goal</button>
+        <button type="submit" [disabled]='!goalForm.form.valid' class="btn btn-success">Add Goal</button>
     </form>
 </div>
